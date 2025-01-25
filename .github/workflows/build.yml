@@ -9,7 +9,6 @@ jobs:
         uses: actions/checkout@v4
       - name: Build with ufbt
         uses: flipperdevices/flipperzero-ufbt-action@v0.1.4
-        app-dir: /home/runner/work/flipperzero-tpms/flipperzero-tpms/
         id: build-app
         with:
           # Set to 'release' to build for latest published release version
