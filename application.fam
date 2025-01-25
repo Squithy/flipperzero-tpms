@@ -2,7 +2,7 @@ App(
     appid="tpms",
     name="TPMS",
     apptype=FlipperAppType.EXTERNAL,
-    targets=["all"],
+    targets=["f7"],
     entry_point="tpms_app",
     requires=["gui"],
     stack_size=4 * 1024,
