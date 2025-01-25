@@ -1,7 +1,7 @@
 #include "SMD3MA4.h"
 #include <lib/toolbox/manchester_decoder.h>
 
-#define TAG "TPMSProtocolSMD3MA4"
+#define TAG "Schrader"
 
 /**
 SMD3MA4 Schrader TPMS used in Subaru.
@@ -10,7 +10,7 @@ Contributed by: RonNiles.
 Also Schrader 3039 TPMS for Infiniti, Nissan, Renault.
 Contributed by: MotorvateDIY.
 
-Refer to https://github.com/JoeSc/Subaru-TPMS-Spoofing
+Refer to https://github.com/JoeSc/Subaru-TPMS-Spoofing.
 
 SCHRADER 3039 TPMS for Infiniti Nissan Renault (407001AY0A) (40700JY00B ?)
 - https://catalogue.schradertcom/de-DE/ProductDetails/3039.html
