@@ -12,7 +12,7 @@ jobs:
         id: build-app
         with:
           # Set to 'release' to build for latest published release version
-          sdk-channel: dev
+          sdk-channel: release
       - name: Upload app artifacts
         uses: actions/upload-artifact@v4
         with:
