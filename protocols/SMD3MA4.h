@@ -8,7 +8,7 @@
 #include "tpms_generic.h"
 #include <lib/subghz/blocks/math.h>
 
-#define TPMS_PROTOCOL_SMD3MA4_NAME "SMD3MA4"
+#define TPMS_PROTOCOL_SMD3MA4_NAME "Schrader MD3MA4"
 
 typedef struct TPMSProtocolDecoderSMD3MA4 TPMSProtocolDecoderSMD3MA4;
 typedef struct TPMSProtocolEncoderSMD3MA4 TPMSProtocolEncoderSMD3MA4;
