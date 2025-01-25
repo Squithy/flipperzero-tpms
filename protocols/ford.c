@@ -4,50 +4,50 @@
 #define TAG "Ford"
 
 /**
- * Help
- * https://github.com/merbanan/rtl_433/blob/master/src/devices/tpms_ford.c
- * https://fccid.io/KR5S180020
- *
- * FSK 8 byte Manchester encoded TPMS with simple checksum.
- * Seen on Ford Fiesta, Focus, Kuga, Escape, Transit...
- *
- * Seen on 315.00 MHz (United States).
- *
- * Seen on 433.92 MHz.
- * Likely VDO-Sensors, Type "S180084730Z", built by "Continental Automotive GmbH".
- *
- * Typically a transmission is sent 4 times.  Sometimes the T/P values
- * differ (slightly) among those.
- *
- * Sensor has 3 modes:
- *   moving: while being driven
- *   atrest: once after stopping, and every 6h thereafter (for months)
- *   learn: 12 transmissions, caused by using learn tool
- *
- * Packet nibbles:
- *
- *     II II II II PP TT FF CC
- *
- * - I = ID
- * - P = Pressure, as PSI * 4
- * - T = Temperature, as C + 56, except:
- *       When 0x80 is on, value is not temperature, meaning the full 8
- *       bits is not temperature, and the lower 7 bits is also not
- *       temperature.  Pattern of low 7 bits in this case seems more like
- *       codepoints than a measurement.
- * - F = Flags:
- *       0x80 not seen
- *       0x40 ON for vehicle moving
- *         Is strongly correlated with 0x80 being set in TT
- *       0x20: 9th bit of pressure.  Seen on Transit very high pressure, otherwise not.
- *       0x10: not seen
- *
- *       0x08: ON for learn
- *       0x04: ON for moving (0x08 and 0x04 both OFF for at rest)
- *       0x02: ~always NOT 0x01 (meaning of 0x3 not understood, but MOVING
- *             tends to have 0x02)
- *       0x01: about 19% of samples
- * - C = Checksum, SUM bytes 0 to 6 = byte 7
+  Help
+  https://github.com/merbanan/rtl_433/blob/master/src/devices/tpms_ford.c
+  https://fccid.io/KR5S180020
+ 
+  FSK 8 byte Manchester encoded TPMS with simple checksum.
+  Seen on Ford Fiesta, Focus, Kuga, Escape, Transit...
+ 
+  Seen on 315.00 MHz (United States).
+ 
+  Seen on 433.92 MHz.
+  Likely VDO-Sensors, Type "S180084730Z", built by "Continental Automotive GmbH".
+ 
+  Typically a transmission is sent 4 times.  Sometimes the T/P values
+  differ (slightly) among those.
+ 
+  Sensor has 3 modes:
+    moving: while being driven
+    atrest: once after stopping, and every 6h thereafter (for months)
+    learn: 12 transmissions, caused by using learn tool
+ 
+  Packet nibbles:
+ 
+      II II II II PP TT FF CC
+ 
+  - I = ID
+  - P = Pressure, as PSI * 4
+  - T = Temperature, as C + 56, except:
+        When 0x80 is on, value is not temperature, meaning the full 8
+        bits is not temperature, and the lower 7 bits is also not
+        temperature.  Pattern of low 7 bits in this case seems more like
+        codepoints than a measurement.
+  - F = Flags:
+        0x80 not seen
+        0x40 ON for vehicle moving
+          Is strongly correlated with 0x80 being set in TT
+        0x20: 9th bit of pressure.  Seen on Transit very high pressure, otherwise not.
+        0x10: not seen
+ 
+        0x08: ON for learn
+        0x04: ON for moving (0x08 and 0x04 both OFF for at rest)
+        0x02: ~always NOT 0x01 (meaning of 0x3 not understood, but MOVING
+              tends to have 0x02)
+        0x01: about 19% of samples
+  - C = Checksum, SUM bytes 0 to 6 = byte 7
  */
 
 #define PREAMBLE_PATTERN \
