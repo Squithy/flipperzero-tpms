@@ -77,7 +77,7 @@ TPMSApp* tpms_app_alloc() {
     //init setting
     app->setting = subghz_setting_alloc();
 
-    //ToDo FIX  file name setting
+    //ToDo SORT  file name setting
     subghz_setting_load(app->setting, EXT_PATH("subghz/assets/setting_user"));
 
     //init Worker & Protocol & History
