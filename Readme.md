@@ -1,13 +1,12 @@
-# TPMS application for [Flipper Zero](https://flipperzero.one/)
-[![FlipC.org](https://flipc.org/wosk/flipperzero-tpms/badge)](https://flipc.org/wosk/flipperzero-tpms)
-
 ## Features
 - Read [TPMS](https://en.wikipedia.org/wiki/Tire-pressure_monitoring_system) sensors
 - Relearn by 125kHz signal
 
 ####  Supported sensors
-* Schrader GG4
-* Abarth 124 (soon)
+* Schrader GG4 (KIA, Mercedes)
+* Schrader BC5A4 (BMW / Mini)
+* Schrader MD3MA4 (Sabaru, Infiniti, Nissan, Renault)
+* VDO-Sensors (Ford)
 
 ## How to use
 In some circumstances TPMS sensors should transmit message periodically (car moving) or by event (emergency pressure reduction or temperature increase), so it can be caught.
